@@ -13,22 +13,18 @@ class Inhabitant {
     this.gender = gender;
   }
   getProperties() {
-    let hands = "";
-    if (!(this instanceof Animal)) {
-      hands = `${this.hands}; `;
-    }
-    return `${this.species}; ${this.name}; ${this.gender}; ${this.legs}; ${hands}${this.saying};`;
+    return `species:${this.species}; name:${this.name}; gender:${this.gender}; legs:${this.legs}; hands:${this.hands}; saying:${this.saying};`;
   }
 }
 class Animal extends Inhabitant {
   constructor(name, saying, gender) {
     super(name, saying, gender);
-    this.legs = 4;
+    this.paws = 4;
     this.species = "animal";
   }
-  // getProperties() {
-  // return `${this.species}; ${this.name}; ${this.gender}; ${this.legs}; ${this.saying};`;
-  //}
+  getProperties() {
+    return `species:${this.species}; name:${this.name}; gender:${this.gender}; paws:${this.paws}; saying:${this.saying};`;
+  }
 }
 class Human extends Inhabitant {
   constructor(name, saying) {
@@ -50,7 +46,7 @@ class Dog extends Animal {
   constructor(name, saying, gender) {
     super(name, saying, gender);
     this.saying = "Woof-Woof";
-    this.legs = 4;
+    this.paws = 4;
     this.species = "dog";
   }
 }
@@ -66,18 +62,15 @@ class Woman extends Human {
     this.gender = "female";
   }
 }
-class CatWoman extends Cat {
+class CatWoman extends Human {
   constructor(name) {
     super(name);
     this.legs = 2;
     this.hands = 2;
     this.species = "сatwoman";
     this.gender = "female";
-    // this.saying = this.setCatSaying();
+    this.saying = "Meow";
   }
-  // setCatSaying() {
-  //   return inhabitants[0].saying;
-  // }
 }
 const inhabitants = [
   new Cat("Eugene", "Hey Fellas!"),
