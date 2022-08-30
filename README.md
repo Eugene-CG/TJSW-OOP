@@ -1,7 +1,7 @@
 [![MIT Licensed][icon-mit]][license]
 [![Kottans-Frontend][icon-kottans]][kottans-frontend]
 
-# A Tiny JS World
+# A Tiny JS World https://eugene-cg.github.io/TJSW-OOP/
 
 This is a tiny task for those who are not familiar with
 Object-Oriented Programing concepts yet.
